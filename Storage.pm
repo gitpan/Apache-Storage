@@ -10,7 +10,7 @@ require Exporter;
 use vars qw($VERSION @ISA @EXPORT);
 
 @ISA = qw(DynaLoader Exporter);
-$VERSION = '1.00';
+$VERSION = '1.1';
 
 @EXPORT = qw(set_storage get_storage get_storage_dump);
 
@@ -123,6 +123,10 @@ Keep in mind that data is only stored on the Apache
 process itself. Different child processes all
 have their own storage. Don't assume you will
 get the same Apache child process when reconnecting.
+
+Make sure you put a "PerlModule Apache::Storage" in
+your httpd.conf file. Apache make core if you do
+not do this.
 
 =over 4
 

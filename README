@@ -35,6 +35,9 @@ DESCRIPTION
     Different child processes all have their own storage. Don't assume you
     will get the same Apache child process when reconnecting.
 
+    Make sure you put a "PerlModule Apache::Storage" in your httpd.conf
+    file. Apache make core if you do not do this.
+
     set_storage
         Set functions can be called in two ways. They can be called with a
         key and a reference. The reference will then be available by calling
